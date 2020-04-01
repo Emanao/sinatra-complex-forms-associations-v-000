@@ -11,6 +11,7 @@ class OwnersController < ApplicationController
   end
 
   post '/owners' do
+    raise params.inspect
     @owner=Owner.new(params[:owner])
     if !params[:pet][:name].empty?
       @owner.pets.build(params[:pet])
